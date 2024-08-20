@@ -1,7 +1,8 @@
 .about-us-page {
-  padding-top: 100px;
-  background: url('/src/assets/images/Mask.png');
+  padding-top: 20px;
+  background: url(/src/assets/images/Mask.png);
   padding-bottom: 100px;
+  line-height: 1.5;
 
   &__title {
     text-align: center;
@@ -33,6 +34,7 @@
       justify-content: space-between;
     }
   }
+
   .thanks-block {
     text-align: center;
 

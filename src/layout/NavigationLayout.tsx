@@ -1,14 +1,17 @@
 import { Outlet } from 'react-router-dom';
-
 import Header from './Header';
+import Footer from './Footer';
 
-export default function NavigationLayout() {
+function NavigationLayout() {
   return (
-    <div className='navigation-container'>
-      <Header></Header>
-      <div className='child-overlay'>
-        <Outlet></Outlet>
-      </div>
+    <div className="wrapper">
+      <Header />
+      <main className="main">
+        <Outlet />
+      </main>
+      <Footer />
     </div>
   );
 }
+
+export default NavigationLayout;

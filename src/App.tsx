@@ -1,43 +1,46 @@
-import { Route, Routes } from "react-router-dom";
-import MainPage from "./pages/MainPage/MainPage";
-import LoginPage from "./pages/LoginPage/LoginPage";
-import RegistrationPage from "./pages/RegistrationPage/RegistrationPage";
-import MainOrLoginRoute from "./layout/MainOrLoginRoute";
-import AboutUsPage from "./pages/AboutUsPage/AboutUsPage";
-import BasketPage from "./pages/BasketPage/BasketPage";
-import CatalogProductPage from "./pages/CatalogProductPage/CatalogProductPage";
-import ProductDetailPage from "./pages/ProductDetailPage/ProductDetailPage";
-import CategoryPage from "./pages/CategoryPage/CategoryPage";
-import UserProfilePage from "./pages/UserProfilePage/UserProfilePage";
-import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
-import Footer from "./layout/Footer";
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import MainPage from './pages/MainPage/MainPage';
+import LoginPage from './pages/LoginPage/LoginPage';
+import RegistrationPage from './pages/RegistrationPage/RegistrationPage';
+import CatalogProductPage from './pages/CatalogProductPage/CatalogProductPage';
+import UserProfilePage from './pages/UserProfilePage/UserProfilePage';
+import AboutUsPage from './pages/AboutUsPage/AboutUsPage';
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
+import NavigationLayout from './layout/NavigationLayout';
 
-function App() {
+
+const isAuthenticated = () => {
+  return true; // Replace with your actual authentication logic
+};
+
+const App = () => {
+  const authenticated = isAuthenticated();
 
   return (
-    <>
+    <BrowserRouter>
       <Routes>
-        {/* Public routes */}
-        <Route path='/' element={<MainPage />} />
-        <Route path='login' element={<LoginPage />} />
-        <Route path='register' element={<RegistrationPage />} />
+        {/* Routes wrapped in NavigationLayout */}
+        <Route path="/" element={<NavigationLayout />}>
+          {/* Public Routes */}
+          <Route path="/" element={<MainPage />} />
+          <Route path="/login" element={authenticated ? <Navigate to="/" /> : <LoginPage />} />
+          <Route path="/registration" element={authenticated ? <Navigate to="/" /> : <RegistrationPage />} />
 
-        {/* Protected routes */}
-        <Route path='/' element={<MainOrLoginRoute />}>
-          <Route path='about' element={<AboutUsPage />} />
-          <Route path='basket' element={<BasketPage />} />
-          <Route path='products' element={<CatalogProductPage />} />
-          <Route path='products/:id' element={<ProductDetailPage />} />
-          <Route path='products/category/:url' element={<CategoryPage />} />
-          <Route path='profile' element={<UserProfilePage />} />
+          {/* Protected Routes */}
+          {authenticated && (
+            <>
+              <Route path="/catalog" element={<CatalogProductPage />} />
+              <Route path="/profile" element={<UserProfilePage />} />
+              <Route path="/about" element={<AboutUsPage />} />
+            </>
+          )}
+
+          {/* Not Found Route */}
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
-
-        {/* Fallback route for undefined paths */}
-        <Route path='*' element={<NotFoundPage />} />
       </Routes>
-      <Footer />
-    </>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;

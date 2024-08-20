@@ -1,3 +1,5 @@
+@use "./constants" as *;
+
 *,
 *::before,
 *::after {
@@ -13,4 +15,20 @@ body {
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+  padding: 20px;
+}
+
+.link {
+  font-size: 16px;
+  color: $color-accent;
 }

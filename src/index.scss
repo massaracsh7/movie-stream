@@ -1,18 +1,5 @@
-@import 'normalize.scss';
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Montserrat', sans-serif;
-}
-
-.container {
-  max-width: 1456px;
-  margin: 0 auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
+@import 'scss/normalize';
+@import 'scss/fonts';
+@import 'scss/base';
+@import 'scss/constants';
+@import 'scss/mixins';

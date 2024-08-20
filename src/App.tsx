@@ -7,14 +7,13 @@ import UserProfilePage from './pages/UserProfilePage/UserProfilePage';
 import AboutUsPage from './pages/AboutUsPage/AboutUsPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import NavigationLayout from './layout/NavigationLayout';
+import { useSelector } from 'react-redux';
+import { RootState } from './store/store';
 
-
-const isAuthenticated = () => {
-  return true; // Replace with your actual authentication logic
-};
 
 const App = () => {
-  const authenticated = isAuthenticated();
+  const isAuthenticated = useSelector((state: RootState) => state.auth.isSignedIn);
+
 
   return (
     <BrowserRouter>
@@ -23,13 +22,13 @@ const App = () => {
         <Route path="/" element={<NavigationLayout />}>
           {/* Public Routes */}
           <Route path="/" element={<MainPage />} />
-          <Route path="/login" element={authenticated ? <Navigate to="/" /> : <LoginPage />} />
-          <Route path="/registration" element={authenticated ? <Navigate to="/" /> : <RegistrationPage />} />
+          <Route path="/catalog" element={<CatalogProductPage />} />
+          <Route path="/login" element={isAuthenticated ? <Navigate to="/" /> : <LoginPage />} />
+          <Route path="/registration" element={isAuthenticated ? <Navigate to="/" /> : <RegistrationPage />} />
 
           {/* Protected Routes */}
-          {authenticated && (
+          {isAuthenticated && (
             <>
-              <Route path="/catalog" element={<CatalogProductPage />} />
               <Route path="/profile" element={<UserProfilePage />} />
               <Route path="/about" element={<AboutUsPage />} />
             </>

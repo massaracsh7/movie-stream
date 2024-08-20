@@ -4,7 +4,7 @@ import './Header.scss';
 const Header = () => {
   const isAuthenticated = () => {
     // Replace this with your actual authentication logic
-    return true; // Set to true if the user is authenticated
+    return false; // Set to true if the user is authenticated
   };
   const authenticated = isAuthenticated();
 

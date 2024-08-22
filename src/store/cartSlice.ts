@@ -9,7 +9,7 @@ interface CartState {
   items: LineItem[];
 }
 
-const initialState: CartState = {
+export const initialState: CartState = {
   id: '',
   version: 1,
   quantity: 0,

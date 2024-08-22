@@ -12,6 +12,7 @@ import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import NavigationLayout from './layout/NavigationLayout';
 import { useSelector } from 'react-redux';
 import { RootState } from './store/store';
+import BasketPage from './pages/BasketPage/BasketPage';
 
 
 const App = () => {
@@ -28,6 +29,7 @@ const App = () => {
           {/* Public Routes */}
           <Route path="/" element={<MainPage />} />
           <Route path="/catalog" element={<CatalogProductPage />} />
+          <Route path="/cart" element={<BasketPage />} />
           <Route path="/login" element={isAuthenticated ? <Navigate to="/" /> : <LoginPage />} />
           <Route path="/registration" element={isAuthenticated ? <Navigate to="/" /> : <RegistrationPage />} />
 

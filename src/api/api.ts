@@ -315,7 +315,7 @@ export const updateQuantity = async (
       },
     })
     .execute();
-
+console.log(response);
   return response;
 };
 

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import 'react-toastify/dist/ReactToastify.css';
 
-//import RegistrationForm from '../../components/LoginForm/RegistrationForm';
+import RegistrationForm from '../../components/Form/RegistrationForm';
 import './RegistrationPage.scss';
 
 function RegistrationPage() {
@@ -22,6 +22,7 @@ function RegistrationPage() {
               Already have account
             </Link>
           </div>
+          <RegistrationForm />
         </section>
       </div>
     </div>

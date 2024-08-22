@@ -5,7 +5,7 @@ import type {
   Product,
   ProductDiscount,
 } from '@commercetools/platform-sdk';
-import type { DiscountsType, QueryArgs } from 'types';
+import type { DiscountsType, QueryArgs } from '../types';
 
 import { projectKey } from './apiConfig';
 import { apiRoot, getAnonymousApiRoot, getAuthApiRoot } from './apiHelpers';
@@ -34,7 +34,6 @@ export const signIn = async (loginRequest: CustomerSignin, cartId: string) => {
 
 export const signUp = async (customer: CustomerDraft) => {
   const response = await apiRootWithProjectKey.customers().post({ body: customer }).execute();
-
   return response;
 };
 
@@ -242,7 +241,6 @@ export const addItemToCart = async (
 export const getActiveCart = async (userId: string) => {
   const apiRoot = userId ? authApiRoot : anonymousApiRoot;
   const response = await apiRoot.withProjectKey({ projectKey }).me().activeCart().get().execute();
-
   return response;
 };
 

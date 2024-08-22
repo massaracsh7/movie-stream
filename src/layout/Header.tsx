@@ -1,13 +1,11 @@
 import { Link, NavLink } from 'react-router-dom';
 import './Header.scss';
+import { useSelector } from 'react-redux';
+import { RootState } from '../store/store';
 
 const Header = () => {
-  const isAuthenticated = () => {
-    // Replace this with your actual authentication logic
-    return false; // Set to true if the user is authenticated
-  };
-  const authenticated = isAuthenticated();
-
+  const authenticated = useSelector((state: RootState) => state.auth.isSignedIn);
+  console.log(authenticated);
   return (
     <header className="header">
       <div className="header__content container">
@@ -25,12 +23,12 @@ const Header = () => {
             </>
           ) : (
             <>
-                <NavLink to="/" className={({ isActive }) => `header__link link ${isActive ? 'active' : ''}`}>Main</NavLink>
-                <NavLink to="/catalog" className={({ isActive }) => `header__link link ${isActive ? 'active' : ''}`}>Catalog</NavLink>
-                <NavLink to="/cart" className={({ isActive }) => `header__link link ${isActive ? 'active' : ''}`}>Cart</NavLink>
-                <NavLink to="/about" className={({ isActive }) => `header__link link ${isActive ? 'active' : ''}`}>About</NavLink>
-                <NavLink to="/profile" className={({ isActive }) => `header__link link ${isActive ? 'active' : ''}`}>Profile</NavLink>
-                <NavLink to="/logout" className={({ isActive }) => `header__link link ${isActive ? 'active' : ''}`}>Logout</NavLink>
+              <NavLink to="/" className={({ isActive }) => `header__link link ${isActive ? 'active' : ''}`}>Main</NavLink>
+              <NavLink to="/catalog" className={({ isActive }) => `header__link link ${isActive ? 'active' : ''}`}>Catalog</NavLink>
+              <NavLink to="/cart" className={({ isActive }) => `header__link link ${isActive ? 'active' : ''}`}>Cart</NavLink>
+              <NavLink to="/about" className={({ isActive }) => `header__link link ${isActive ? 'active' : ''}`}>About</NavLink>
+              <NavLink to="/profile" className={({ isActive }) => `header__link link ${isActive ? 'active' : ''}`}>Profile</NavLink>
+              <NavLink to="/logout" className={({ isActive }) => `header__link link ${isActive ? 'active' : ''}`}>Logout</NavLink>
             </>
           )}
         </nav>

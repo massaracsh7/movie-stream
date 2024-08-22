@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import 'react-toastify/dist/ReactToastify.css';
 
-//import LoginForm from '../../components/LoginForm/LoginForm';
+import LoginForm from '../../components/Form/LoginForm';
 import './LoginPage.scss';
 
 function LoginPage() {
@@ -22,6 +22,7 @@ function LoginPage() {
               Create a new account
             </Link>
           </div>
+          <LoginForm />
         </section>
       </div>
     </div>

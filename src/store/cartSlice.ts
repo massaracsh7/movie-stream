@@ -4,14 +4,14 @@ import { LineItem } from '@commercetools/platform-sdk'; // Adjust the import pat
 
 interface CartState {
   id: string;
-  version: string;
+  version: number;
   quantity: number;
   items: LineItem[];
 }
 
 const initialState: CartState = {
   id: '',
-  version: '',
+  version: 1,
   quantity: 0,
   items: [],
 };

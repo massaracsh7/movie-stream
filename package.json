@@ -18,6 +18,9 @@
   },
   "dependencies": {
     "@commercetools/platform-sdk": "^7.11.0",
+    "@commercetools/sdk-client-v2": "^2.5.0",
+    "@commercetools/sdk-middleware-auth": "^7.0.1",
+    "@commercetools/sdk-middleware-http": "^7.0.4",
     "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
     "@esbuild-plugins/node-modules-polyfill": "^0.2.2",
     "@hookform/resolvers": "^3.9.0",
@@ -51,6 +54,7 @@
     "@types/jest": "^29.5.7",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
+    "@types/react-modal": "^3.16.3",
     "@types/redux-mock-store": "^1.0.6",
     "@typescript-eslint/eslint-plugin": "^6.9.0",
     "@typescript-eslint/parser": "^6.0.0",

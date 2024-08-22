@@ -17,7 +17,7 @@ import {
   AUTH_MIDDLEWARE_HOST,
   HTTP_MIDDLEWARE_HOST,
   apiRootScopes,
-  authScopes,
+  authApiRootscopes,
   clientId,
   clientSecret,
   projectKey,
@@ -29,27 +29,26 @@ const httpMiddlewareOptions: HttpMiddlewareOptions = {
 };
 
 const authMiddlewareOptions: AuthMiddlewareOptions = {
-  host: 'https://api.us-central1.gcp.commercetools.com',
+  host: AUTH_MIDDLEWARE_HOST,
   projectKey,
   credentials: {
     clientId,
     clientSecret,
   },
-  scopes: authScopes,
+  scopes: apiRootScopes,
   fetch,
 };
 
 const client: Client = new ClientBuilder()
-  .withClientCredentialsFlow(authMiddlewareOptions)
   .withHttpMiddleware(httpMiddlewareOptions)
-  .withLoggerMiddleware()
+  .withClientCredentialsFlow(authMiddlewareOptions)
   .build();
 
 export const apiRoot: ApiRoot = createApiBuilderFromCtpClient(client);
 
 export const getAuthApiRoot = (loginRequest: CustomerSignin) => {
   const passwordAuthMiddlewareOptions: PasswordAuthMiddlewareOptions = {
-    host: 'https://auth.us-central1.gcp.commercetools.com',
+    host: AUTH_MIDDLEWARE_HOST,
     projectKey,
     credentials: {
       clientId,
@@ -59,7 +58,7 @@ export const getAuthApiRoot = (loginRequest: CustomerSignin) => {
         password: loginRequest.password,
       },
     },
-    scopes: authScopes,
+    scopes: authApiRootscopes,
     fetch,
   };
 

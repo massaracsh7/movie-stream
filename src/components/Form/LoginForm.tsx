@@ -58,6 +58,7 @@ export default function Form() {
 
       setSignInError(null);
       const response = await toastSignIn(onRenderError, () => signIn(data, cartState.id));
+      
       reset();
       dispatch(setAuthData({ isSignedIn: true, id: response.body.customer.id }));
       try {

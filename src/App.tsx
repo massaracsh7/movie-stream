@@ -1,4 +1,7 @@
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import Modal from 'react-modal';
+
 import MainPage from './pages/MainPage/MainPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import RegistrationPage from './pages/RegistrationPage/RegistrationPage';
@@ -13,9 +16,11 @@ import { RootState } from './store/store';
 
 const App = () => {
   const isAuthenticated = useSelector((state: RootState) => state.auth.isSignedIn);
-
+  Modal.setAppElement('#root');
 
   return (
+    <>
+    <ToastContainer />
     <BrowserRouter>
       <Routes>
         {/* Routes wrapped in NavigationLayout */}
@@ -39,6 +44,7 @@ const App = () => {
         </Route>
       </Routes>
     </BrowserRouter>
+    </>
   );
 };
 

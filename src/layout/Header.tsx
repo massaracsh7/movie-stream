@@ -16,7 +16,7 @@ const Header = () => {
           {!authenticated ? (
             <>
               <NavLink to="/" className={({ isActive }) => `header__link link ${isActive ? 'active' : ''}`}>Main</NavLink>
-              <NavLink to="/catalog" className={({ isActive }) => `header__link link ${isActive ? 'active' : ''}`}>Catalog</NavLink>
+              <NavLink to="/products" className={({ isActive }) => `header__link link ${isActive ? 'active' : ''}`}>Catalog</NavLink>
               <NavLink to="/cart" className={({ isActive }) => `header__link link ${isActive ? 'active' : ''}`}><MdShoppingCart /></NavLink>
               <NavLink to="/about" className={({ isActive }) => `header__link link ${isActive ? 'active' : ''}`}>About</NavLink>
               <NavLink to="/login" className={({ isActive }) => `header__link link ${isActive ? 'active' : ''}`}>LogIn</NavLink>

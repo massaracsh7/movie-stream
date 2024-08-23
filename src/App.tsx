@@ -13,6 +13,8 @@ import NavigationLayout from './layout/NavigationLayout';
 import { useSelector } from 'react-redux';
 import { RootState } from './store/store';
 import BasketPage from './pages/BasketPage/BasketPage';
+import ProductDetailPage from './pages/ProductDetailPage/ProductDetailPage';
+import CategoryPage from './pages/CategoryPage/CategoryPage';
 
 
 const App = () => {
@@ -21,31 +23,33 @@ const App = () => {
 
   return (
     <>
-    <ToastContainer />
-    <BrowserRouter>
-      <Routes>
-        {/* Routes wrapped in NavigationLayout */}
-        <Route path="/" element={<NavigationLayout />}>
-          {/* Public Routes */}
-          <Route path="/" element={<MainPage />} />
-          <Route path="/catalog" element={<CatalogProductPage />} />
-          <Route path="/cart" element={<BasketPage />} />
-          <Route path="/login" element={isAuthenticated ? <Navigate to="/" /> : <LoginPage />} />
-          <Route path="/registration" element={isAuthenticated ? <Navigate to="/" /> : <RegistrationPage />} />
+      <ToastContainer />
+      <BrowserRouter basename="/">
+        <Routes>
+          {/* Routes wrapped in NavigationLayout */}
+          <Route path="/" element={<NavigationLayout />}>
+            {/* Public Routes */}
+            <Route path="/" element={<MainPage />} />
+            <Route path='products' element={<CatalogProductPage />} />
+            <Route path='products/:id' element={<ProductDetailPage />} />
+            <Route path='products/category/:url' element={<CategoryPage />} />
+            <Route path="/cart" element={<BasketPage />} />
+            <Route path="/login" element={isAuthenticated ? <Navigate to="/" /> : <LoginPage />} />
+            <Route path="/registration" element={isAuthenticated ? <Navigate to="/" /> : <RegistrationPage />} />
 
-          {/* Protected Routes */}
-          {isAuthenticated && (
-            <>
-              <Route path="/profile" element={<UserProfilePage />} />
-              <Route path="/about" element={<AboutUsPage />} />
-            </>
-          )}
+            {/* Protected Routes */}
+            {isAuthenticated && (
+              <>
+                <Route path="/profile" element={<UserProfilePage />} />
+                <Route path="/about" element={<AboutUsPage />} />
+              </>
+            )}
 
-          {/* Not Found Route */}
-          <Route path="*" element={<NotFoundPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+            {/* Not Found Route */}
+            <Route path="*" element={<NotFoundPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 };

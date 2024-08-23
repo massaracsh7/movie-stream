@@ -13,7 +13,7 @@ import type { ProductItem } from '../../types';
 
 import { getLimit } from '../../utils/getLimit';
 
-import '@/pages/CatalogProductPage/CatalogProductPage.scss';
+import '../CatalogProductPage/CatalogProductPage.scss';
 
 const CategoryPage = () => {
   const [productList, setProductList] = useState<ProductItem[]>([]);

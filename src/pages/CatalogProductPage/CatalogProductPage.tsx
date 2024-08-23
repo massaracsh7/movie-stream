@@ -11,7 +11,7 @@ import CircularProgress from '@mui/joy/CircularProgress';
 import type { ProductItem } from '../../types';
 
 import { getLimit } from '../../utils/getLimit';
-import '../CatalogProductPage/CatalogProductPage.scss';
+import './CatalogProductPage.scss';
 import { getProductsList } from './helpers';
 
 const CatalogProductPage = () => {

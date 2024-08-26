@@ -34,6 +34,7 @@ const App = () => {
             <Route path='products/:id' element={<ProductDetailPage />} />
             <Route path='products/category/:url' element={<CategoryPage />} />
             <Route path="/cart" element={<BasketPage />} />
+            <Route path="/about" element={<AboutUsPage />} />
             <Route path="/login" element={isAuthenticated ? <Navigate to="/" /> : <LoginPage />} />
             <Route path="/registration" element={isAuthenticated ? <Navigate to="/" /> : <RegistrationPage />} />
 
@@ -41,7 +42,6 @@ const App = () => {
             {isAuthenticated && (
               <>
                 <Route path="/profile" element={<UserProfilePage />} />
-                <Route path="/about" element={<AboutUsPage />} />
               </>
             )}
 

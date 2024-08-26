@@ -120,7 +120,7 @@ export default function BasketList() {
         {!cartStateId && (
           <p>
             <span>The cart is empty. Please, go to </span>
-            <Link className='basket__link' to={'/catalog'}>
+            <Link className='basket__link' to={'/products'}>
               catalog
             </Link>
           </p>

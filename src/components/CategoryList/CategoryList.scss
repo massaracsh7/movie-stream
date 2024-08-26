@@ -5,13 +5,15 @@
   background-color: rgba(255, 255, 255, 0.8);
   padding: 0.7rem;
   border-radius: 0.5rem;
+  line-height: 1.5rem;
   z-index: 5;
+
   @media (max-width: 768px) {
     padding: 0.5rem;
+    left: 70%;
+    top: 50px;
   }
-  @media (max-width: 500px) {
-    top: 80px;
-  }
+
   &__btn {
     font-size: 1rem;
     width: auto;
@@ -38,15 +40,19 @@
 
   &__list {
     font-size: 0;
+    line-height: 0;
+    padding-top: 0;
   }
 
   &__list--active {
+    padding-top: 0.5rem;
     font-size: 1rem;
     list-style-type: none;
   }
 
   &__sublist {
     list-style-type: none;
+    padding-left: 1rem;
   }
 
   &__item {
@@ -55,13 +61,14 @@
     a {
       color: black;
       text-decoration: none;
+
       &:hover {
         color: red;
       }
     }
 
     &--active {
-      & > a {
+      &>a {
         color: red;
       }
     }

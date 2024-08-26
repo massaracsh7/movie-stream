@@ -23,7 +23,6 @@ const ProductCard = ({ product }: ProductProps) => {
 
   const imgUrl = product.images && product.images.length > 0 ? product.images[0].url : '';
   const fullPrice = product.price ? product.price / 100 : 0;
-  const discountedPrice = product.discount ? fullPrice - Number(product.discount) / 100 : fullPrice;
 
   const productFullPriceClasses = classNames('product-card__price_full', {
     'product-card__price_has-discount': product.discount,
@@ -78,9 +77,6 @@ const ProductCard = ({ product }: ProductProps) => {
       </div>
       <div className="product-card__price">
         <span className={productFullPriceClasses}>${fullPrice.toFixed(2)}</span>
-        {product.discount && (
-          <span className="product-card__price_discounted">${discountedPrice.toFixed(2)}</span>
-        )}
       </div>
     </Link>
   );

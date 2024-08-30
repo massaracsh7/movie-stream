@@ -31,7 +31,6 @@ export const toastSignIn = async (
       },
     },
   });
-  console.log(response);
   return response;
 };
 

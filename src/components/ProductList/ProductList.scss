@@ -4,17 +4,17 @@
   justify-content: space-around;
 
   .product-card {
-    width: 100%;
+    width: 30%;
     margin-bottom: 20px;
 
-    @media (min-width: 700px) {
+    @include media-tablet {
       width: 40%;
-      margin-left: 10px;
-      margin-right: 10px;
     }
 
-    @media (min-width: 1000px) {
-      width: 30%;
+    @include media-mobile {
+      width: 100%;
+      margin-left: 10px;
+      margin-right: 10px;
     }
   }
 }

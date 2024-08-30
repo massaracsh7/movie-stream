@@ -3,17 +3,17 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin: 20% auto 0 auto;
+  margin: 0 auto;
   justify-content: space-between;
-  max-width: 937px;
+  max-width: 58.5625rem;
 
   &__image {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 158px;
-    width: 137px;
-    font-size: 50px;
+    height: 9.875rem;
+    width: 8.5625rem;
+    font-size: 3.125rem;
     font-weight: 700;
     color: #880e4f;
     background: url(/not-found.svg) no-repeat 0 0;
@@ -21,29 +21,29 @@
 
     &__text {
       margin: 0;
-      padding: 15px;
+      padding: 0.9375rem;
     }
   }
 
   &__separator {
     display: none;
-    height: 300px;
+    height: 18.75rem;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    width: 2px;
+    width: 0.125rem;
   }
 
   &__info {
-    max-width: 550px;
+    max-width: 34.375rem;
     align-self: center;
 
     &__title {
       font-weight: 700;
-      font-size: 25px;
+      font-size: 1.5625rem;
       color: rgba(0, 0, 0, 0.87);
     }
 
     &__text {
-      font-size: 18px;
+      font-size: 1.125rem;
       font-weight: 500;
       color: rgba(0, 0, 0, 0.54);
     }
@@ -52,37 +52,31 @@
   &__link {
     display: block;
     margin: 0 auto;
-    padding: 15px;
-    width: 270px;
+    padding: 0.9375rem;
+    width: 16.875rem;
     text-align: center;
     font-weight: 700;
     text-transform: uppercase;
     text-decoration: none;
-    color: #e91e63;
-    border: 1px solid #e91e63;
-    border-radius: 26px;
+    color: $color-accent;
+    border: 1px solid $color-accent;
+    border-radius: 1.625rem;
   }
 
   &__link:hover {
-    background: #e91e63;
+    background: $color-accent;
     color: #ffffff;
   }
 }
 
-@media (min-width: 500px) {
-  .not-found-page-content {
-    margin: 10% auto 0 auto;
-  }
-}
-
-@media (min-width: 950px) {
+@include media-tablet {
   .not-found-page-content {
     flex-direction: row;
 
     &__image {
-      height: 316px;
-      width: 275px;
-      font-size: 113px;
+      height: 19.75rem;
+      width: 17.1875rem;
+      font-size: 7.0625rem;
     }
 
     &__separator {
@@ -91,12 +85,18 @@
 
     &__info {
       &__title {
-        font-size: 35px;
+        font-size: 2.1875rem;
       }
 
       &__text {
-        font-size: 24px;
+        font-size: 1.5rem;
       }
     }
+  }
+}
+
+@include media-mobile {
+  .not-found-page-content {
+    margin: 10% auto 0 auto;
   }
 }

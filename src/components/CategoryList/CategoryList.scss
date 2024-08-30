@@ -8,7 +8,7 @@
   line-height: 1.5rem;
   z-index: 5;
 
-  @media (max-width: 768px) {
+  @include media-mobile {
     padding: 0.5rem;
     left: 70%;
     top: 50px;
@@ -19,7 +19,7 @@
     width: auto;
     padding: 0.3rem 0.6rem;
     color: white;
-    background-color: #304ffe;
+    background-color: $color-secondary;
     text-transform: capitalize;
     display: flex;
     justify-content: center;
@@ -30,10 +30,10 @@
     cursor: pointer;
 
     &:hover {
-      background-color: #e91e63;
+      background-color: $color-accent;
     }
 
-    @media (max-width: 768px) {
+    @include media-mobile {
       font-size: 0.75rem;
     }
   }
@@ -59,17 +59,17 @@
     cursor: pointer;
 
     a {
-      color: black;
+      color: #000000;
       text-decoration: none;
 
       &:hover {
-        color: red;
+        color: #ff0000;
       }
     }
 
     &--active {
       &>a {
-        color: red;
+        color: #ff0000;
       }
     }
   }

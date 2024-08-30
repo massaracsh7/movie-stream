@@ -1,3 +1,5 @@
+@import "../../styles/_mixins";
+
 .logo {
   width: 40px;
   height: 40px;
@@ -14,8 +16,8 @@
   width: 100%;
   height: 90px;
   inset: 0;
-  background-color: #ef256a;
-  color: #fff;
+  background-color: $color-accent;
+  color: $color-primary;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.7);
   padding: 20px 0;
   z-index: 1;
@@ -34,16 +36,16 @@
     margin-left: 20px;
     margin-right: auto;
 
-    @media (max-width: 1024px) {
+    @include media-tablet {
       font-size: 1.5rem;
     }
 
-    @media (max-width: 768px) {
+    @include media-mobile {
       font-size: 1.25rem;
       margin-left: 0;
     }
 
-    @media (max-width: 480px) {
+    @include media-mobilesm {
       font-size: 1rem;
     }
   }
@@ -65,10 +67,10 @@
     background: none;
     border: none;
     cursor: pointer;
-    color: #fff;
+    color: $color-primary;
     z-index: 2;
 
-    @media (max-width: 768px) {
+    @include media-mobile {
       display: block;
     }
   }
@@ -77,13 +79,13 @@
     display: flex;
     gap: 20px;
 
-    @media (max-width: 768px) {
+    @include media-mobile {
       position: absolute;
-      top: 90px;
+      top: 80px;
       left: 0;
       right: 0;
       flex-direction: column;
-      background-color: #ef256a;
+      background-color: $color-accent;
       align-items: center;
       padding: 20px;
       transform: translateY(-130%);
@@ -91,7 +93,7 @@
     }
 
     &.open {
-      @media (max-width: 768px) {
+      @include media-mobile {
         transform: translateY(0);
       }
     }
@@ -101,7 +103,7 @@
       gap: 10px;
     }
 
-    @media (max-width: 480px) {
+    @include media-mobilesm {
       flex-direction: column;
       gap: 5px;
     }
@@ -112,7 +114,7 @@
       transform: translateY(2px);
     }
 
-    @media (max-width: 480px) {
+    @include media-mobilesm {
       font-size: 0.9rem;
     }
   }
@@ -127,8 +129,8 @@
   position: absolute;
   top: -5px;
   right: -5px;
-  background-color: red;
-  color: white;
+  background-color: #ff0000;
+  color: $color-primary;
   border-radius: 50%;
   padding: 2px 6px;
   font-size: 12px;

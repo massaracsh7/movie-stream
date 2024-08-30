@@ -10,8 +10,8 @@ interface ProductListProps {
 const ProductList = ({ productList }: ProductListProps) => {
   return (
     <div className='product-list'>
-      {productList.map((product) => (
-        <ProductCard key={product.id} product={product} />
+      {productList.map((product, index) => (
+        <ProductCard key={`${product.id}-${index}`} product={product} />
       ))}
     </div>
   );

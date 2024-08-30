@@ -62,13 +62,10 @@ const CatalogProductPage = () => {
       setItemsLimit(newLimit);
     };
 
-    // Add a window resize event listener
     window.addEventListener('resize', handleResize);
 
-    // Call the handleResize function initially
     handleResize();
 
-    // Clean up the event listener when the component unmounts
     return () => {
       window.removeEventListener('resize', handleResize);
     };

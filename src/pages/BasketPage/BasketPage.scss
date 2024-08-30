@@ -6,7 +6,7 @@
   padding: 2.5rem;
   padding-top: 100px;
 
-  @media (max-width: 680px) {
+  @include media-mobile {
     padding: 1rem;
   }
 
@@ -16,7 +16,7 @@
     border-radius: 1.2rem;
     min-height: 95vh;
 
-    @media (max-width: 1024px) {
+    @include media-tablet {
       flex-direction: column;
     }
   }
@@ -29,7 +29,7 @@
     height: 7rem;
     margin-top: 12.5rem;
 
-    @media (max-width: 1024px) {
+    @include media-tablet {
       display: none;
     }
   }
@@ -40,7 +40,7 @@
     cursor: pointer;
     text-decoration: none;
 
-    @media (max-width: 680px) {
+    @include media-mobile {
       font-size: 0.75rem;
     }
 
@@ -52,6 +52,7 @@
   &__main-link {
     position: relative;
     cursor: pointer;
+
     &:before {
       content: '';
       width: 1.2rem;
@@ -68,7 +69,7 @@
     flex-basis: 40%;
     padding: 2.4rem 3.6rem;
 
-    @media (max-width: 1024px) {
+    @include media-tablet {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -82,7 +83,7 @@
     font-size: 3rem;
     font-weight: 600;
 
-    @media (max-width: 1024px) {
+    @include media-tablet {
       font-size: 1.5rem;
     }
 
@@ -101,12 +102,12 @@
       align-items: center;
     }
 
-    @media (max-width: 680px) {
+    @include media-mobile {
       margin-bottom: 1rem;
     }
 
     h1 {
-      @media (max-width: 680px) {
+      @include media-mobile {
         font-size: 1.5rem;
       }
     }
@@ -128,25 +129,8 @@
   }
 
   &__btn {
-    font-size: 1rem;
-    width: auto;
-    padding: 0.3rem 0.6rem;
-    color: white;
-    background-color: #304ffe;
-    text-transform: capitalize;
-    border: none;
-    border-radius: 0.5rem;
-    transition: all ease-in-out 0.3s;
-    cursor: pointer;
+    @extend %btn-placeholder;
 
-    &:hover {
-      background-color: #e91e63;
-    }
-
-    @media (max-width: 576px) {
-      padding: 0.2rem 0.5rem;
-      font-size: 0.7rem;
-    }
   }
 
   &__inner {
@@ -155,11 +139,11 @@
     padding: 2.4rem 3.6rem;
     border-radius: 0 1.2rem 1.2rem 0;
 
-    @media (max-width: 1024px) {
+    @include media-tablet {
       border-radius: 0 0 1.2rem 1.2rem;
     }
 
-    @media (max-width: 680px) {
+    @include media-mobile {
       padding: 1rem;
       font-size: 0.75rem;
     }
@@ -171,8 +155,12 @@
     justify-content: space-between;
     margin: 0.6rem 0;
 
-    @media (max-width: 768px) {
+    @include media-mobile {
       flex-direction: column;
+    }
+
+    form {
+      margin-bottom: 10px;
     }
   }
 
@@ -187,8 +175,8 @@
     }
 
     &:hover {
-      border: 1px solid #304ffe;
-      outline: 1px solid #304ffe;
+      border: 1px solid $color-secondary;
+      outline: 1px solid $color-secondary;
     }
   }
 }

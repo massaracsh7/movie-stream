@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-
+import './AboutCard.scss';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 export interface AboutCardPersonData {

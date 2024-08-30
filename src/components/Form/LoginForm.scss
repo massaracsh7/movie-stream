@@ -1,7 +1,7 @@
 .reg-form {
   text-align: left;
 
-  @media (max-width: 768px) {
+  @include media-mobile {
     font-size: 0.75rem;
   }
 
@@ -17,8 +17,8 @@
     }
 
     &:hover {
-      border: 1px solid #304ffe;
-      outline: 1px solid #304ffe;
+      border: 1px solid $color-secondary;
+      outline: 1px solid $color-secondary;
     }
   }
 
@@ -28,15 +28,15 @@
   }
 
   input:invalid {
-    border-color: red;
-    outline: 1px solid red;
+    border-color: #ff0000;
+    outline: 1px solid #ff0000;
   }
 
-  .reg-form__error ~ input {
-    border: 1px solid red;
+  .reg-form__error~input {
+    border: 1px solid #ff0000;
   }
 
-  input:invalid + .reg-form__error--zip {
+  input:invalid+.reg-form__error--zip {
     display: block;
   }
 
@@ -57,41 +57,22 @@
       flex-direction: column;
     }
 
-    & > div {
+    &>div {
       width: 50%;
 
-      @media (max-width: 768px) {
+      @include media-mobile {
         width: 100%;
       }
     }
   }
 
   &__btn {
-    font-size: 1.2rem;
+    @extend %btn-placeholder;
     width: 33%;
-    padding: 0.3rem 0.6rem;
-    color: white;
-    background-color: #304ffe;
-    text-transform: uppercase;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    border-radius: 0.5rem;
-    transition: all ease-in-out 0.3s;
-    cursor: pointer;
-
-    &:hover {
-      background-color: #e91e63;
-    }
-
-    @media (max-width: 768px) {
-      font-size: 0.75rem;
-    }
   }
 
   &__error {
-    color: red;
+    color: #ff0000;
     position: relative;
   }
 
@@ -106,7 +87,7 @@
     cursor: pointer;
   }
 
-  input[type='text'] + .reg-form__view:before {
+  input[type='text']+.reg-form__view:before {
     content: '';
     border-bottom: 2px solid #000;
     position: absolute;
@@ -116,7 +97,7 @@
     left: -4px;
     transform: rotate(-45deg);
 
-    @media (max-width: 768px) {
+    @include media-mobile {
       width: 1.2rem;
       height: 40%;
       top: 4px;
@@ -124,7 +105,7 @@
     }
   }
 
-  input[type='password'] + .reg-form__view:before {
+  input[type='password']+.reg-form__view:before {
     display: none;
   }
 
@@ -137,12 +118,12 @@
     border-radius: 0.3125rem;
     margin: 0.6rem 0;
 
-    @media (max-width: 768px) {
+    @include media-mobile {
       width: 100%;
     }
   }
 }
 
 .server-error {
-  border: 1px solid red;
+  border: 1px solid #ff0000;
 }

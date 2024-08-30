@@ -28,9 +28,10 @@
     font-weight: 600;
 
     &:hover {
-      color: #e91e63;
+      color: $color-accent;
     }
-    @media (max-width: 680px) {
+
+    @include media-mobile {
       font-size: 0.75rem;
     }
   }
@@ -43,7 +44,7 @@
       position: relative;
       margin-right: 10px;
 
-      color: red;
+      color: #ff0000;
 
       &:before {
         content: '';

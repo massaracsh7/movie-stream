@@ -1,0 +1,58 @@
+.product-detail {
+  background-color: #303030;
+  background-image: url('../../assets/images/Rectangle.png');
+
+  &__container {
+    padding-top: 6.25rem;
+    max-width: 91rem;
+    margin: 0 auto;
+    height: 100vh;
+  }
+
+  &__content-container {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1.25rem;
+
+    @include media-mobile {
+      flex-direction: column;
+      row-gap: 1.25rem;
+    }
+  }
+
+  &__text-content {
+    margin-left: 1.25rem;
+    max-width: 27.5rem;
+    min-width: 20rem;
+  }
+
+  &__title {
+    color: $color-primary;
+  }
+
+  &__description {
+    color: $color-primary;
+  }
+
+  &__cart-buttons-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.625rem;
+  }
+
+  &__cart-buttons-container .button {
+    max-width: 18.75rem;
+  }
+}
+
+.full-price_crossed {
+  text-decoration: line-through;
+  font-size: 1.1875rem;
+  color: $color-primary;
+  opacity: 0.5;
+
+  @include media-mobile {
+    font-size: 0.75rem;
+    padding: 0 0.625rem;
+  }
+}

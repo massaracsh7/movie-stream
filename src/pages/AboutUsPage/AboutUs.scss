@@ -1,0 +1,63 @@
+.about-us-page {
+  padding-top: 1.25rem;
+  background: url(/src/assets/images/Mask.png);
+  padding-bottom: 6.25rem;
+  line-height: 1.5;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__subtitle {
+    text-align: center;
+    font-style: italic;
+    color: #8a8888;
+  }
+
+  &__description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.875rem;
+    text-align: justify;
+
+    @include media-mobile {
+      font-size: 1.125rem;
+    }
+  }
+
+  .cards-list {
+    display: flex;
+    padding-bottom: 3.125rem;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @include media-laptop {
+      justify-content: space-between;
+    }
+  }
+
+  .thanks-block {
+    text-align: center;
+
+    &__title {
+      margin-bottom: 2.1875rem;
+      font-weight: 500;
+    }
+
+    &__link {
+      text-decoration: none;
+      color: inherit;
+      font-weight: 500;
+      font-style: italic;
+
+      &:hover {
+        color: $color-accent;
+      }
+    }
+
+    &__link_school {
+      margin: 0 auto;
+      display: block;
+      width: 12.5rem;
+    }
+  }
+}

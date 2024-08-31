@@ -1,0 +1,9 @@
+.product-detail-breadcrumbs {
+  justify-content: left;
+  @include media-mobile {
+    justify-content: left;
+  }
+  .active {
+    pointer-events: none;
+  }
+}

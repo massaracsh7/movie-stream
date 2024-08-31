@@ -1,0 +1,129 @@
+.reg-form {
+  text-align: left;
+
+  @include media-mobile {
+    font-size: 0.75rem;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0.6rem;
+    border-radius: 0.3125rem;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    margin: 0.6rem 0;
+
+    &:placeholder {
+      color: rgba(0, 0, 0, 0.6);
+    }
+
+    &:hover {
+      border: 1px solid $color-secondary;
+      outline: 1px solid $color-secondary;
+    }
+  }
+
+  .reg-form__error--zip {
+    display: none;
+    color: red;
+  }
+
+  input:invalid {
+    border-color: #ff0000;
+    outline: 1px solid #ff0000;
+  }
+
+  .reg-form__error~input {
+    border: 1px solid #ff0000;
+  }
+
+  input:invalid+.reg-form__error--zip {
+    display: block;
+  }
+
+  select {
+    width: 100%;
+    border-radius: 0.3125rem;
+    padding: 0.6rem;
+    margin: 0.6rem 0;
+  }
+
+  &__flex {
+    display: flex;
+    gap: 0.6rem;
+    justify-content: space-between;
+    margin: 0.6rem 0;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+
+    &>div {
+      width: 50%;
+
+      @include media-mobile {
+        width: 100%;
+      }
+    }
+  }
+
+  &__btn {
+    @extend %btn-placeholder;
+    width: 33%;
+  }
+
+  &__error {
+    color: #ff0000;
+    position: relative;
+  }
+
+  &__label-pass {
+    position: relative;
+  }
+
+  &__view {
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+    cursor: pointer;
+  }
+
+  input[type='text']+.reg-form__view:before {
+    content: '';
+    border-bottom: 2px solid #000;
+    position: absolute;
+    width: 1.5rem;
+    height: 50%;
+    top: 2px;
+    left: -4px;
+    transform: rotate(-45deg);
+
+    @include media-mobile {
+      width: 1.2rem;
+      height: 40%;
+      top: 4px;
+      left: -2px;
+    }
+  }
+
+  input[type='password']+.reg-form__view:before {
+    display: none;
+  }
+
+  input[type='checkbox'] {
+    margin-right: 0.6rem;
+  }
+
+  fieldset {
+    width: 50%;
+    border-radius: 0.3125rem;
+    margin: 0.6rem 0;
+
+    @include media-mobile {
+      width: 100%;
+    }
+  }
+}
+
+.server-error {
+  border: 1px solid #ff0000;
+}

@@ -3,11 +3,11 @@ import { toast } from 'react-toastify';
 import classNames from 'classnames';
 import { MdAddShoppingCart } from 'react-icons/md';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
-import { updateCartData } from '../../store/cartSlice';
-import { addItemToCart, createAnonymousCart, createUserCart } from '../../api/api';
+import { RootState } from '@/store/store';
+import { updateCartData } from '@/store/cartSlice';
+import { addItemToCart, createAnonymousCart, createUserCart } from '@/api/api';
 import './ProductCard.scss';
-import type { ProductItem } from '../../types';
+import type { ProductItem } from '@/types';
 
 interface ProductProps {
   product: ProductItem;

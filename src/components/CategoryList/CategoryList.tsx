@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import type { CategoryReference, LocalizedString } from '@commercetools/platform-sdk';
 
-import { getCategoryList } from '../../pages/CatalogProductPage/helpers';
+import { getCategoryList } from '@/pages/CatalogProductPage/helpers';
 import './CategoryList.scss';
 
 interface CategoryItem {

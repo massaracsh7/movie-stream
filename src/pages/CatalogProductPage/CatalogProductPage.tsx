@@ -2,15 +2,15 @@ import { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { useParams } from 'react-router-dom';
 
-import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
-import ProductFilter from '../../components/Filter/ProductFilter';
-import useProductFilter from '../../components/Filter/useProductFilter';
-import CategoryList from '../../components/CategoryList/CategoryList';
-import ProductList from '../../components/ProductList/ProductList';
+import Breadcrumbs from '@/components/Breadcrumbs/Breadcrumbs';
+import ProductFilter from '@/components/Filter/ProductFilter';
+import useProductFilter from '@/components/Filter/useProductFilter';
+import CategoryList from '@/components/CategoryList/CategoryList';
+import ProductList from '@/components/ProductList/ProductList';
 import CircularProgress from '@mui/joy/CircularProgress';
-import type { ProductItem } from '../../types';
+import type { ProductItem } from '@/types';
 
-import { getLimit } from '../../utils/getLimit';
+import { getLimit } from '@/utils/getLimit';
 import './CatalogProductPage.scss';
 import { getProductsList } from './helpers';
 

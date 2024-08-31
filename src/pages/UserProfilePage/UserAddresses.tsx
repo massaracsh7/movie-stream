@@ -6,11 +6,11 @@ import Modal from 'react-modal';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 
-import countries from '../../components/Form/CountryData';
-import { customStyles } from '../../components/Modal/Modal';
-import { TOAST_INTERNAL_SERVER_ERROR, TOAST_UPDATE_ERROR } from '../../constants';
-import { ApiErrorResponse } from '../../types';
-import { UserAddressSchema } from '../../utils/schema';
+import countries from '@/components/Form/CountryData';
+import { customStyles } from '@/components/Modal/Modal';
+import { TOAST_INTERNAL_SERVER_ERROR, TOAST_UPDATE_ERROR } from '@/constants';
+import { ApiErrorResponse } from '@/types';
+import { UserAddressSchema } from '@/utils/schema';
 import UserNewAddress from './UserNewAddress';
 import './UserProfilePage.scss';
 import {
@@ -23,7 +23,7 @@ import {
 import { toastForNoConnection, toastUpdate } from './toasts';
 import type { AddressResponse, ChangeAddressInput, Country } from './types';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../store/store.js';
+import { RootState } from '@/store/store.js';
 
 type FormType = z.infer<typeof UserAddressSchema>;
 

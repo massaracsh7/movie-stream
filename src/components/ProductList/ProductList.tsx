@@ -1,5 +1,5 @@
 import ProductCard from '../ProductCard/ProductCard';
-import { ProductItem } from '../../types';
+import { ProductItem } from '@/types';
 
 import './ProductList.scss';
 

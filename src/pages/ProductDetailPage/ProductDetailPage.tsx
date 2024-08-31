@@ -3,18 +3,18 @@ import Modal from 'react-modal';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
-import { customStyles } from '../../components/Modal/Modal';
-import Slider from '../../components/Slider/Slider';
-import { SliderItemDataSourceType } from '../../components/Slider/SliderItem';
-import { getProduct } from '../../api/api';
-import { ProductItem } from '../../types';
+import { customStyles } from '@/components/Modal/Modal';
+import Slider from '@/components/Slider/Slider';
+import { SliderItemDataSourceType } from '@/components/Slider/SliderItem';
+import { getProduct } from '@/api/api';
+import { ProductItem } from '@/types';
 
-import { addProductToCart, removeProductFromCart } from '../../businessLogic/cartLogic';
+import { addProductToCart, removeProductFromCart } from '@/businessLogic/cartLogic';
 import ProductDetailBreadcrumbs from './ProductDetailBreadcrumbs';
 import './ProductDetailPage.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
-import { updateCartData } from '../../store/cartSlice';
+import { RootState } from '@/store/store';
+import { updateCartData } from '@/store/cartSlice';
 
 interface ApiError {
   statusCode: number;

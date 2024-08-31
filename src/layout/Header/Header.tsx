@@ -1,10 +1,10 @@
 import { Link, NavLink } from 'react-router-dom';
 import './Header.scss';
 import { useSelector } from 'react-redux';
-import { RootState } from '../store/store';
 import { MdShoppingCart } from 'react-icons/md';
 import { useState, useEffect, useRef } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { RootState } from '@/store/store';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);

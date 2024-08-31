@@ -6,17 +6,17 @@ import Modal from 'react-modal';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 
-import countries from '../../components/Form/CountryData';
-import { customStyles } from '../../components/Modal/Modal';
-import { TOAST_INTERNAL_SERVER_ERROR, TOAST_UPDATE_ERROR } from '../../constants';
-import { ApiErrorResponse } from '../../types';
-import { UserNewAddressSchema } from '../../utils/schema';
+import countries from '@/components/Form/CountryData';
+import { customStyles } from '@/components/Modal/Modal';
+import { TOAST_INTERNAL_SERVER_ERROR, TOAST_UPDATE_ERROR } from '@/constants';
+import { ApiErrorResponse } from '@/types';
+import { UserNewAddressSchema } from '@/utils/schema';
 import './UserProfilePage.scss';
 import { addAddress, addTypeAddress, queryCustomer } from './apiUser';
 import { toastForNoConnection, toastUpdate } from './toasts';
 import type { Country, NewAddress } from './types';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
+import { RootState } from '@/store/store';
 
 type FormType = z.infer<typeof UserNewAddressSchema>;
 

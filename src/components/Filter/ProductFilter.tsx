@@ -10,8 +10,8 @@ import {
   FROM_ZERO_TO_TEN_PRICE_RANGE,
   SORTING_PARAM_NAME,
   SORTING_PARAM_PRICE,
-} from '../../constants';
-import type { ProductFilterProps } from '../../types';
+} from '@/constants';
+import type { ProductFilterProps } from '@/types';
 import './ProductFilter.scss';
 
 const availableYears = ['2020', '2021', '2022', '2023'];

@@ -6,16 +6,16 @@ import Modal from 'react-modal';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 
-import { customStyles } from '../../components/Modal/Modal';
-import { TOAST_INTERNAL_SERVER_ERROR, TOAST_PASSWORD_ERROR } from '../../constants';
-import { ApiErrorResponse } from '../../types';
-import { UserPasswordSchema } from '../../utils/schema';
+import { customStyles } from '@/components/Modal/Modal';
+import { TOAST_INTERNAL_SERVER_ERROR, TOAST_PASSWORD_ERROR } from '@/constants';
+import { ApiErrorResponse } from '@/types';
+import { UserPasswordSchema } from '@/utils/schema';
 import './UserProfilePage.scss';
 import { customerChangePassword, queryCustomer } from './apiUser';
 import { toastForNoConnection, toastUpdate } from './toasts';
 import type { PasswordView, UserPasswordData } from './types';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
+import { RootState } from '@/store/store';
 
 type FormType = z.infer<typeof UserPasswordSchema>;
 

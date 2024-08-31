@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import '../../components/Breadcrumbs/Breadcrumbs.scss';
+import '@/components/Breadcrumbs/Breadcrumbs.scss';
 import './ProductDetailBreadcrumbs.scss';
 
 interface Props {

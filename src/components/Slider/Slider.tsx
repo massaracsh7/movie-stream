@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { getRefValue, useStateRef } from '../../utils/typedHooks';
-import { getTouchEventData } from '../../utils/universalTouch';
+import { getRefValue, useStateRef } from '@/utils/typedHooks';
+import { getTouchEventData } from '@/utils/universalTouch';
 import './Slider.scss';
 import SliderItem from './SliderItem';
 import { SliderItemDataSourceType } from './SliderItem';

@@ -8,12 +8,12 @@ import {
   deleteCart,
   getActiveCart,
   removeItem,
-} from '../../api/api';
+} from '@/api/api';
 import './BasketList.scss';
 import Quantity from './Quantity';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
-import { updateCartData } from '../../store/cartSlice';
+import { RootState } from '@/store/store';
+import { updateCartData } from '@/store/cartSlice';
 
 export default function BasketList() {
   const [cartId, setCartId] = useState('1');

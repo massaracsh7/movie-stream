@@ -6,12 +6,12 @@ import { useNavigate } from 'react-router-dom';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 
-import { signIn, signUp } from '../../api/api';
-import { TOAST_INTERNAL_SERVER_ERROR, TOAST_SIGN_UP_ERROR } from '../../constants';
-import { ApiErrorResponse } from '../../types';
-import { RootState } from '../../store/store';
-import { setAuthData } from '../../store/authSlice';
-import { RegistrationFormSchema } from '../../utils/schema';
+import { signIn, signUp } from '@/api/api';
+import { TOAST_INTERNAL_SERVER_ERROR, TOAST_SIGN_UP_ERROR } from '@/constants';
+import { ApiErrorResponse } from '@/types';
+import { RootState } from '@/store/store';
+import { setAuthData } from '@/store/authSlice';
+import { RegistrationFormSchema } from '@/utils/schema';
 import countries from './CountryData';
 import './LoginForm.scss';
 import { toastForNoConnection, toastSignUp } from './toasts';

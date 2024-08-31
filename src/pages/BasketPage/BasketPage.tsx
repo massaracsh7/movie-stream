@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import BasketList from '../../components/BasketList/BasketList';
+import BasketList from '@/components/BasketList/BasketList';
 
 import './BasketPage.scss';
 

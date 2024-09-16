@@ -34,9 +34,9 @@ The application is powered by CommerceTools. It implements registration integrat
 
 ## Setting up ##
 
-* Clone this repo: $ git clone https://github.com/iisakjanova/eCommerce-Application.git
+* Clone this repo: $ git clone https://github.com/massaracsh7/movie-stream.git
 
-* Go to downloaded folder: $ cd eCommerce-Application.
+* Go to downloaded folder: $ cd movie-stream.
 
 * Install dependencies: $ npm install
 
